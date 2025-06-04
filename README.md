@@ -54,10 +54,11 @@ export AIRFLOW_HOME=$(pwd)/airflow
 airflow db init
 
 # Start webserver and scheduler
+
 airflow webserver --port 8080
 airflow scheduler
 
-🧪 Testing the DAG
+## 🧪 Testing the DAG
 Go to http://localhost:8080 in your browser.
 
 Enable the DAG named coin_price_etl_dag.
