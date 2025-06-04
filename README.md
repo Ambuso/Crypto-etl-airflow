@@ -18,7 +18,7 @@ This project is an ETL (Extract, Transform, Load) pipeline built using **Apache 
 ## 📦 Tech Stack
 
 - **Apache Airflow**
-- **Python 3.12+**
+- **Python 3.12**
 - **CoinGecko API**
 - **PostgreSQL**
 - **psycopg2**
