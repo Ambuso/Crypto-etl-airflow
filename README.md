@@ -26,7 +26,7 @@ This project is an ETL (Extract, Transform, Load) pipeline built using **Apache 
 
 ---
 
-🔧 Setup Instructions
+## 🔧 Setup Instructions
 1. Clone the Repository
 
 git clone https://github.com/your-username/crypto-price-pipeline.git
