@@ -9,7 +9,7 @@ An hourly pipeline that fetches market data for 15 cryptocurrencies from the Coi
 ## How it works
 
 1. **Extract**: one request to CoinGecko returns the current price, market cap and total volume in USD for 15 coins, including Bitcoin, Ethereum, Solana and Cardano.
-2. **Transform**: each coin becomes one row with its name, upper-case symbol, the three values and a UTC timestamp.
+2. **Transform**: each coin becomes one row with its name, upper-case symbol, the three values and a UTC timestamp
 3. **Load**: the task creates the `crypto` schema and `crypto_prices` table if they are missing, then inserts the rows. If the insert fails, the transaction is rolled back.
 4. **Schedule**: the DAG runs every hour, retries twice with a two-minute delay, and can email on failure if SMTP is set up in Airflow.
 5. **Analyze**: `analysis.ipynb` reads a CSV export of the table and plots each coin's price with 6-hour and 24-hour moving averages, marking local lows and highs.
