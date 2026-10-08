@@ -4,20 +4,7 @@ An hourly pipeline that fetches market data for 15 cryptocurrencies from the Coi
 
 ## Architecture
 
-```mermaid
-flowchart LR
-    API["CoinGecko API<br/>/coins/markets"]
-    DB[("PostgreSQL<br/>crypto.crypto_prices")]
-    NB["analysis.ipynb<br/>moving averages and price charts"]
-
-    subgraph Airflow["Airflow DAG: coin_price_etl_dag, runs hourly"]
-        T["fetch_and_store_crypto_prices<br/>fetch, shape rows, insert"]
-    end
-
-    API --> T
-    T --> DB
-    DB -->|CSV export| NB
-```
+![Architecture: CoinGecko API to an hourly Airflow task to PostgreSQL, with a notebook for analysis](docs/architecture.png)
 
 ## How it works
 
